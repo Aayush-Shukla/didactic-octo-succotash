@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+
+<div class="row" xmlns:right="http://www.w3.org/1999/xhtml">
+        <div class="col">
+            </div>
+            <div class="col-sm-8">
+
+<div class="card" style="width:100%;">
+
+<ul class="list-group">
+{% for i in a %}
+    <li class="list-group-item res"><strong>{{i}}</strong><button onclick="window.location.href='{% url 'delete' i.id %}'" type="button" name="delete" class="btn btn-danger del" >DELETE</button>  </li>
+
+
+
+
+
+
+{% endfor %}
+    </div>
+            </div>
+
+    </ul>
+<div class="col">
+
+                </div>
+        </div>
+
+
+{% endblock %}

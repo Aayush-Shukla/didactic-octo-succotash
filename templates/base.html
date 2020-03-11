@@ -1,0 +1,105 @@
+
+{% load static %}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code dad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+<style>
+.btn-danger {
+  position: absolute;
+  right: 10%;
+  top:4px;
+  bottom:4px;
+  border:solid 2px black;
+}
+nav{
+background-color: #000000;
+height:9%;
+}
+
+.outer{
+margin-top:30px;}
+body{
+background-color:black;}
+
+.subbtn{
+color:red;
+border-color:red;
+}
+.subbtn:hover{
+background-color:red;
+color:white;
+border-color:red;
+}
+
+
+.clearall{
+position:fixed;
+bottom:7%;
+right:7%;
+border-radius: 50%;
+<!--background: url(https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest?cb=20160331154244);-->
+height:60px;
+width:60px;
+
+
+}
+.res{
+
+background-color:rgba(0,0,0,0.4)
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<nav class="navbar nav">
+  <a class="navbar-brand" href="#">
+    <img src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest?cb=20160331154244" width="60" height="60" class="d-inline-block" alt="">
+    <font color="red"> To-Do List</font>
+  </a>
+</nav>
+
+
+
+
+<div class="container-fluid outer">
+
+
+
+<form action="{% url 'new_search' %}" method='POST'>
+{% csrf_token %}
+
+
+
+    <div class="input-group mb-3">
+  <input type="text" name="search" class="form-control" placeholder="TO - DO Items" autocomplete="off" required autofocus>
+  <div class="input-group-append">
+    <input type="submit"  class="btn btn-outline-secondary subbtn"id="button-addon2" name="submit" value="SUBMIT">
+  </div>
+</div>
+
+{% block content %}
+{% endblock %}
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+<input type="image" src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest?cb=20160331154244" class="clearall" onclick="window.location.href='{% url 'clear' %}'" >
+</body>
+</html>
