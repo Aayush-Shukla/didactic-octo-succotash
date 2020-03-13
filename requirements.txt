@@ -148,7 +148,7 @@ PyQt5==5.12.3
 PyQt5-sip==12.7.1
 PyQtWebEngine==5.12.1
 pyreadline==2.1
-pyrsistent==0.15.7
+
 
 pyrsistent==0.15.4
 
