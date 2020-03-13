@@ -149,9 +149,9 @@ PyQt5-sip==12.7.1
 PyQtWebEngine==5.12.1
 pyreadline==2.1
 pyrsistent==0.15.7
-=======
+
 pyrsistent==0.15.4
->>>>>>> 3c15e41512cb97cb8ae66a440cfac62df86fcf6e
+
 PySocks==1.7.1
 pytest==5.2.1
 pytest-arraydiff==0.3
